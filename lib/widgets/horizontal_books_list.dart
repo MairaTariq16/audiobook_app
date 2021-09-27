@@ -12,10 +12,15 @@ class BooksListH extends StatelessWidget {
       child: ListView(
         scrollDirection: Axis.horizontal,
         children: <Widget>[
-          Container(
-            width: 110.0,
-            margin: const EdgeInsets.only(right: 5),
-            child: const Image(image: AssetImage("assets/images/book-1.png")),
+          GestureDetector(
+            onTap: () {
+              
+            },
+            child: Container(
+              width: 110.0,
+              margin: const EdgeInsets.only(right: 5),
+              child: const Image(image: AssetImage("assets/images/book-1.png")),
+            ),
           ),
           Container(
             width: 110.0,

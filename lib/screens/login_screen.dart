@@ -2,7 +2,6 @@
 
 import 'package:audiobook_app/screens/register_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/gestures.dart';
 import '../widgets/entry_header.dart';
 import '../widgets/social_media_links.dart';
 import './register_screen.dart';
