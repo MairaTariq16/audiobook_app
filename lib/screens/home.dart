@@ -5,6 +5,7 @@ import "package:flutter/material.dart";
 import '../widgets/horizontal_books_list.dart';
 import '../widgets/horizontal_category_list.dart';
 import '../widgets/grid_books_list.dart';
+import '../widgets/bottom_navbar.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -77,33 +78,7 @@ class HomePage extends StatelessWidget {
         elevation: 2.0,
         backgroundColor: Color(0xffF26B6C),
       ),
-      bottomNavigationBar: BottomAppBar(
-        shape: CircularNotchedRectangle(),
-        child: Container(
-          margin: EdgeInsets.symmetric(horizontal: 20),
-          child: Row(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                IconButton(
-                    onPressed: () {},
-                    icon:
-                        Icon(Icons.home, size: 30.0, color: Color(0xff7D7D7D))),
-                IconButton(
-                    onPressed: () {},
-                    icon: Icon(Icons.search,
-                        size: 30.0, color: Color(0xff7D7D7D))),
-                IconButton(
-                    onPressed: () {},
-                    icon:
-                        Icon(Icons.book, size: 30.0, color: Color(0xff7D7D7D))),
-                IconButton(
-                    onPressed: () {},
-                    icon: Icon(Icons.person,
-                        size: 30.0, color: Color(0xff7D7D7D))),
-              ]),
-        ),
-      ),
+      bottomNavigationBar: BottomNavBar(),
     );
   }
 }
