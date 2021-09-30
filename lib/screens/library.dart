@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:audiobook_app/screens/now_playing.dart';
 import 'package:flutter/cupertino.dart';
 import "package:flutter/material.dart";
 import '../widgets/horizontal_books_list.dart';
@@ -28,12 +29,9 @@ class Library extends StatelessWidget {
             child: Column(children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
+                children: [
                   Text('Recently Played',
-                      style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Color(0xff4F4F4F))),
+                      style: Theme.of(context).textTheme.headline2),
                   Text('See All',
                       style: TextStyle(fontSize: 12, color: Colors.pink))
                 ],
@@ -41,12 +39,9 @@ class Library extends StatelessWidget {
               BooksListH(),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
+                children: [
                   Text('Playlists',
-                      style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Color(0xff4F4F4F))),
+                      style: Theme.of(context).textTheme.headline2),
                   Text('See All',
                       style: TextStyle(fontSize: 12, color: Colors.pink))
                 ],
@@ -60,12 +55,9 @@ class Library extends StatelessWidget {
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
+                children: [
                   Text('Bookmarks',
-                      style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Color(0xff4F4F4F))),
+                      style: Theme.of(context).textTheme.headline2),
                   Text('See All',
                       style: TextStyle(fontSize: 12, color: Colors.pink))
                 ],
@@ -78,12 +70,9 @@ class Library extends StatelessWidget {
                   'Chapter  03 - Mr Marcedes Air', '19:00 - 20:21 minutes'),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
+                children: [
                   Text('Most Played',
-                      style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Color(0xff4F4F4F))),
+                      style: Theme.of(context).textTheme.headline2),
                   Text('See All',
                       style: TextStyle(fontSize: 12, color: Colors.pink)),
                 ],
@@ -105,12 +94,19 @@ class Library extends StatelessWidget {
         ),
         //Bottom navigation bar
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {},
-          child: Icon(Icons.play_arrow),
-          elevation: 2.0,
-          backgroundColor: Color(0xffF26B6C),
-        ),
+        floatingActionButton: _buildFAB(context),
         bottomNavigationBar: BottomNavBar());
   }
+}
+
+Widget _buildFAB(context) => FloatingActionButton(
+      onPressed: () => _onFabTap(context),
+      child: Icon(Icons.play_arrow),
+      elevation: 2.0,
+      backgroundColor: Color(0xffF26B6C),
+    );
+
+_onFabTap(BuildContext context) {
+  Navigator.push(
+      context, MaterialPageRoute(builder: (context) => NowPlaying()));
 }
