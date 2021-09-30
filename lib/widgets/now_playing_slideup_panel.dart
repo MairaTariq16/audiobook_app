@@ -1,3 +1,4 @@
+import 'package:audiobook_app/widgets/chapter_info.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -20,17 +21,15 @@ class NowPlayingSlideUpWidget extends StatelessWidget {
                 child: Text('CHAPTER',
                     style: TextStyle(fontSize: 20, color: Color(0xffF26B6C)))),
             Padding(
-              padding: const EdgeInsets.only(top: 70.0, left: 20),
+              padding: const EdgeInsets.only(top: 40.0, left: 20),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: const [
-                  Text(
-                    "Chapter  01 - Mr Marcedes",
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                  Text("20 minutes",
-                      style: TextStyle(fontSize: 12, color: Color(0xff787878)))
+                  ChapterInfo('Chapter  01 - Mr Marcedes Air', '20 minutes'),
+                  ChapterInfo('Chapter  02 - Mr Marcedes Air', '20 minutes'),
+                  ChapterInfo('Chapter  03 - Mr Marcedes Air', '20 minutes'),
+                  ChapterInfo('Chapter  04 - Mr Marcedes Air', '20 minutes'),
                 ],
               ),
             )

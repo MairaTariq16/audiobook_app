@@ -6,6 +6,8 @@ import 'package:audiobook_app/widgets/profile_info.dart';
 import 'package:flutter/cupertino.dart';
 import "package:flutter/material.dart";
 
+import 'now_playing.dart';
+
 class ProfilePage extends StatelessWidget {
   const ProfilePage({Key? key}) : super(key: key);
 
@@ -122,12 +124,19 @@ class ProfilePage extends StatelessWidget {
           ],
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {},
-          child: Icon(Icons.play_arrow),
-          elevation: 2.0,
-          backgroundColor: Color(0xffF26B6C),
-        ),
+        floatingActionButton: _buildFAB(context),
         bottomNavigationBar: BottomNavBar());
   }
+}
+
+Widget _buildFAB(context) => FloatingActionButton(
+      onPressed: () => _onFabTap(context),
+      child: Icon(Icons.play_arrow),
+      elevation: 2.0,
+      backgroundColor: Color(0xffF26B6C),
+    );
+
+_onFabTap(BuildContext context) {
+  Navigator.push(
+      context, MaterialPageRoute(builder: (context) => NowPlaying()));
 }
